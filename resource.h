@@ -16,6 +16,7 @@
 #define IDC_COMBO_THEME                 1006
 #define IDC_COMBO_THEME2                1007
 #define IDC_COMBO_FONT                  1007
+#define IDC_STATIC_EDIT_DYNAMIC         1008
 
 // Next default values for new objects
 // 

@@ -3,7 +3,9 @@
     "allow": [
       "Bash(awk *)",
       "Bash(xxd)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Read(//d/1.projects_c++/1.test/**)",
+      "Read(//d/1.projects_c++/Common/**)"
     ]
   }
 }

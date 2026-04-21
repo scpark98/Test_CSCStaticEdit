@@ -144,12 +144,25 @@ BOOL CTestCSCStaticEditDlg::OnInitDialog()
 	}
 
 	m_edit.SetWindowText(_T("Original CEdit"));
-	m_edit_round.set_round(4);
+	m_edit_round.set_round(8);
 	//m_edit_round.set_border_color(m_theme.cr_border_inactive, m_theme.cr_border_active);
 	//m_edit_round.set_border_width(2);
 	m_edit_readonly.set_readonly();
 	m_edit_password.set_password_mode();
 	m_edit_disabled.EnableWindow(FALSE);
+
+	// "Dynamically" 레이블 옆(= m_edit_disabled 의 한 줄 아래)에 m_edit_dynamic 동적 생성
+	CRect rect_password, rect_disabled;
+	m_edit_password.GetWindowRect(&rect_password);
+	m_edit_disabled.GetWindowRect(&rect_disabled);
+	ScreenToClient(&rect_password);
+	ScreenToClient(&rect_disabled);
+	int row_pitch = rect_disabled.top - rect_password.top;
+	CRect rect_dynamic = rect_disabled;
+	rect_dynamic.OffsetRect(0, row_pitch);
+	m_edit_dynamic.Create(WS_CHILD | WS_VISIBLE | WS_TABSTOP, rect_dynamic, this, IDC_STATIC_EDIT_DYNAMIC);
+	m_edit_dynamic.SetWindowText(_T("Dynamically created"));
+	m_edit_dynamic.set_color_theme(cur_theme, true);
 
 	RestoreWindowPosition(&theApp, this);
 
