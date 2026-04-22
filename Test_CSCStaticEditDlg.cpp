@@ -81,6 +81,9 @@ BEGIN_MESSAGE_MAP(CTestCSCStaticEditDlg, CDialogEx)
 	ON_WM_WINDOWPOSCHANGED()
 	ON_CBN_SELCHANGE(IDC_COMBO_FONT, &CTestCSCStaticEditDlg::OnCbnSelchangeComboFont)
 	ON_REGISTERED_MESSAGE(Message_CSCStaticEdit, &CTestCSCStaticEditDlg::on_message_CSCStaticEdit)
+	ON_BN_CLICKED(IDC_RADIO_ALIGN_LEFT, &CTestCSCStaticEditDlg::OnBnClickedRadioAlignLeft)
+	ON_BN_CLICKED(IDC_RADIO_ALIGN_CENTER, &CTestCSCStaticEditDlg::OnBnClickedRadioAlignCenter)
+	ON_BN_CLICKED(IDC_RADIO_ALIGN_RIGHT, &CTestCSCStaticEditDlg::OnBnClickedRadioAlignRight)
 END_MESSAGE_MAP()
 
 
@@ -163,6 +166,7 @@ BOOL CTestCSCStaticEditDlg::OnInitDialog()
 	m_edit_dynamic.Create(WS_CHILD | WS_VISIBLE | WS_TABSTOP, rect_dynamic, this, IDC_STATIC_EDIT_DYNAMIC);
 	m_edit_dynamic.SetWindowText(_T("Dynamically created"));
 	m_edit_dynamic.set_color_theme(cur_theme, true);
+	m_edit_dynamic.set_round(8);
 
 	RestoreWindowPosition(&theApp, this);
 
@@ -300,4 +304,18 @@ LRESULT CTestCSCStaticEditDlg::on_message_CSCStaticEdit(WPARAM wParam, LPARAM lP
 				break;
 		}
 	}
+}
+void CTestCSCStaticEditDlg::OnBnClickedRadioAlignLeft()
+{
+	m_edit_static.set_text_align(DT_LEFT);
+}
+
+void CTestCSCStaticEditDlg::OnBnClickedRadioAlignCenter()
+{
+	m_edit_static.set_text_align(DT_CENTER);
+}
+
+void CTestCSCStaticEditDlg::OnBnClickedRadioAlignRight()
+{
+	m_edit_static.set_text_align(DT_RIGHT);
 }

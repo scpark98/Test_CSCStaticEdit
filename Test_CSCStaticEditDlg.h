@@ -59,4 +59,7 @@ public:
 	afx_msg void OnWindowPosChanged(WINDOWPOS* lpwndpos);
 	CSCComboBox m_combo_font;
 	afx_msg void OnCbnSelchangeComboFont();
+	afx_msg void OnBnClickedRadioAlignLeft();
+	afx_msg void OnBnClickedRadioAlignCenter();
+	afx_msg void OnBnClickedRadioAlignRight();
 };
