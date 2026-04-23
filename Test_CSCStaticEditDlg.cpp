@@ -152,9 +152,7 @@ BOOL CTestCSCStaticEditDlg::OnInitDialog()
 
 	m_edit_round.set_round(8);
 	m_edit_round.set_use_copy_button();
-	m_edit_round.set_use_updown_key(true, 0.0001f);
-	//m_edit_round.set_border_color(m_theme.cr_border_inactive, m_theme.cr_border_active);
-	//m_edit_round.set_border_width(2);
+	m_edit_round.set_use_updown_key(true, 0.001f);
 	m_edit_readonly.set_readonly();
 	m_edit_password.set_password_mode();
 	m_edit_disabled.EnableWindow(FALSE);
