@@ -147,7 +147,12 @@ BOOL CTestCSCStaticEditDlg::OnInitDialog()
 	}
 
 	m_edit.SetWindowText(_T("Original CEdit"));
+
+	m_edit_static.set_use_updown_key(true, 0.1f);
+
 	m_edit_round.set_round(8);
+	m_edit_round.set_use_copy_button();
+	m_edit_round.set_use_updown_key(true, 0.0001f);
 	//m_edit_round.set_border_color(m_theme.cr_border_inactive, m_theme.cr_border_active);
 	//m_edit_round.set_border_width(2);
 	m_edit_readonly.set_readonly();
