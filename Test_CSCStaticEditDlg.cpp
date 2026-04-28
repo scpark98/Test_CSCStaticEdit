@@ -1,5 +1,5 @@
-ï»¿
-// Test_CSCStaticEditDlg.cpp: êµ¬í˜„ íŒŒì¼
+
+// Test_CSCStaticEditDlg.cpp: ±¸Çö ÆÄÀÏ
 //
 
 #include "pch.h"
@@ -15,22 +15,22 @@
 #endif
 
 
-// ì‘ìš© í”„ë¡œê·¸ë¨ ì •ë³´ì— ì‚¬ìš©ë˜ëŠ” CAboutDlg ëŒ€í™” ìƒìì…ë‹ˆë‹¤.
+// ÀÀ¿ë ÇÁ·Î±×·¥ Á¤º¸¿¡ »ç¿ëµÇ´Â CAboutDlg ´ëÈ­ »óÀÚÀÔ´Ï´Ù.
 
 class CAboutDlg : public CDialogEx
 {
 public:
 	CAboutDlg();
 
-// ëŒ€í™” ìƒì ë°ì´í„°ì…ë‹ˆë‹¤.
+// ´ëÈ­ »óÀÚ µ¥ÀÌÅÍÀÔ´Ï´Ù.
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_ABOUTBOX };
 #endif
 
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV ì§€ì›ì…ë‹ˆë‹¤.
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV Áö¿øÀÔ´Ï´Ù.
 
-// êµ¬í˜„ì…ë‹ˆë‹¤.
+// ±¸ÇöÀÔ´Ï´Ù.
 protected:
 	DECLARE_MESSAGE_MAP()
 };
@@ -48,7 +48,7 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// CTestCSCStaticEditDlg ëŒ€í™” ìƒì
+// CTestCSCStaticEditDlg ´ëÈ­ »óÀÚ
 
 
 
@@ -87,15 +87,15 @@ BEGIN_MESSAGE_MAP(CTestCSCStaticEditDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// CTestCSCStaticEditDlg ë©”ì‹œì§€ ì²˜ë¦¬ê¸°
+// CTestCSCStaticEditDlg ¸Ş½ÃÁö Ã³¸®±â
 
 BOOL CTestCSCStaticEditDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
-	// ì‹œìŠ¤í…œ ë©”ë‰´ì— "ì •ë³´..." ë©”ë‰´ í•­ëª©ì„ ì¶”ê°€í•©ë‹ˆë‹¤.
+	// ½Ã½ºÅÛ ¸Ş´º¿¡ "Á¤º¸..." ¸Ş´º Ç×¸ñÀ» Ãß°¡ÇÕ´Ï´Ù.
 
-	// IDM_ABOUTBOXëŠ” ì‹œìŠ¤í…œ ëª…ë ¹ ë²”ìœ„ì— ìˆì–´ì•¼ í•©ë‹ˆë‹¤.
+	// IDM_ABOUTBOX´Â ½Ã½ºÅÛ ¸í·É ¹üÀ§¿¡ ÀÖ¾î¾ß ÇÕ´Ï´Ù.
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
 	ASSERT(IDM_ABOUTBOX < 0xF000);
 
@@ -113,12 +113,12 @@ BOOL CTestCSCStaticEditDlg::OnInitDialog()
 		}
 	}
 
-	// ì´ ëŒ€í™” ìƒìì˜ ì•„ì´ì½˜ì„ ì„¤ì •í•©ë‹ˆë‹¤.  ì‘ìš© í”„ë¡œê·¸ë¨ì˜ ì£¼ ì°½ì´ ëŒ€í™” ìƒìê°€ ì•„ë‹ ê²½ìš°ì—ëŠ”
-	//  í”„ë ˆì„ì›Œí¬ê°€ ì´ ì‘ì—…ì„ ìë™ìœ¼ë¡œ ìˆ˜í–‰í•©ë‹ˆë‹¤.
-	SetIcon(m_hIcon, TRUE);			// í° ì•„ì´ì½˜ì„ ì„¤ì •í•©ë‹ˆë‹¤.
-	SetIcon(m_hIcon, FALSE);		// ì‘ì€ ì•„ì´ì½˜ì„ ì„¤ì •í•©ë‹ˆë‹¤.
+	// ÀÌ ´ëÈ­ »óÀÚÀÇ ¾ÆÀÌÄÜÀ» ¼³Á¤ÇÕ´Ï´Ù.  ÀÀ¿ë ÇÁ·Î±×·¥ÀÇ ÁÖ Ã¢ÀÌ ´ëÈ­ »óÀÚ°¡ ¾Æ´Ò °æ¿ì¿¡´Â
+	//  ÇÁ·¹ÀÓ¿öÅ©°¡ ÀÌ ÀÛ¾÷À» ÀÚµ¿À¸·Î ¼öÇàÇÕ´Ï´Ù.
+	SetIcon(m_hIcon, TRUE);			// Å« ¾ÆÀÌÄÜÀ» ¼³Á¤ÇÕ´Ï´Ù.
+	SetIcon(m_hIcon, FALSE);		// ÀÛÀº ¾ÆÀÌÄÜÀ» ¼³Á¤ÇÕ´Ï´Ù.
 
-	// TODO: ì—¬ê¸°ì— ì¶”ê°€ ì´ˆê¸°í™” ì‘ì—…ì„ ì¶”ê°€í•©ë‹ˆë‹¤.
+	// TODO: ¿©±â¿¡ Ãß°¡ ÃÊ±âÈ­ ÀÛ¾÷À» Ãß°¡ÇÕ´Ï´Ù.
 	m_combo_theme.set_line_height(14);
 	std::deque<CString> color_theme_list;
 	CSCColorTheme::get_color_theme_list(color_theme_list);
@@ -134,7 +134,7 @@ BOOL CTestCSCStaticEditDlg::OnInitDialog()
 	m_combo_font.set_as_font_combo();
 	m_combo_font.set_line_height(14);
 
-	// ë ˆì§€ìŠ¤íŠ¸ë¦¬ì— ì €ì¥ëœ í°íŠ¸ê°€ ìˆìœ¼ë©´ ì½¤ë³´ì—ì„œ ì„ íƒí•˜ê³  edit ë“¤ì—ë„ ì ìš©
+	// ·¹Áö½ºÆ®¸®¿¡ ÀúÀåµÈ ÆùÆ®°¡ ÀÖÀ¸¸é ÄŞº¸¿¡¼­ ¼±ÅÃÇÏ°í edit µé¿¡µµ Àû¿ë
 	CString cur_font = AfxGetApp()->GetProfileString(_T("setting"), _T("cur font"), _T(""));
 	if (!cur_font.IsEmpty())
 	{
@@ -149,15 +149,23 @@ BOOL CTestCSCStaticEditDlg::OnInitDialog()
 	m_edit.SetWindowText(_T("Original CEdit"));
 
 	m_edit_static.set_use_updown_key(true, 0.1f);
+	m_edit_static.set_action_button(CSCStaticEdit::action_clear);
 
 	m_edit_round.set_round(8);
-	m_edit_round.set_use_copy_button();
+	m_edit_round.set_action_button(CSCStaticEdit::action_copy);
 	m_edit_round.set_use_updown_key(true, 0.001f);
+	m_edit_round.set_prefix_image(IDB_EMAIL, 20);
+	m_edit_round.set_margin(CRect(10, 0, 0, 0));
+
 	m_edit_readonly.set_readonly();
+	m_edit_readonly.set_prefix_image(IDB_EMAIL_WHITE, 12);
+
 	m_edit_password.set_password_mode();
+	m_edit_password.set_action_button(CSCStaticEdit::action_password_toggle);
+
 	m_edit_disabled.EnableWindow(FALSE);
 
-	// "Dynamically" ë ˆì´ë¸” ì˜†(= m_edit_disabled ì˜ í•œ ì¤„ ì•„ë˜)ì— m_edit_dynamic ë™ì  ìƒì„±
+	// "Dynamically" ·¹ÀÌºí ¿·(= m_edit_disabled ÀÇ ÇÑ ÁÙ ¾Æ·¡)¿¡ m_edit_dynamic µ¿Àû »ı¼º
 	CRect rect_password, rect_disabled;
 	m_edit_password.GetWindowRect(&rect_password);
 	m_edit_disabled.GetWindowRect(&rect_disabled);
@@ -170,10 +178,11 @@ BOOL CTestCSCStaticEditDlg::OnInitDialog()
 	m_edit_dynamic.SetWindowText(_T("Dynamically created"));
 	m_edit_dynamic.set_color_theme(cur_theme, true);
 	m_edit_dynamic.set_round(8);
+	m_edit_dynamic.set_action_button(CSCStaticEdit::action_find);
 
 	RestoreWindowPosition(&theApp, this);
 
-	return TRUE;  // í¬ì»¤ìŠ¤ë¥¼ ì»¨íŠ¸ë¡¤ì— ì„¤ì •í•˜ì§€ ì•Šìœ¼ë©´ TRUEë¥¼ ë°˜í™˜í•©ë‹ˆë‹¤.
+	return TRUE;  // Æ÷Ä¿½º¸¦ ÄÁÆ®·Ñ¿¡ ¼³Á¤ÇÏÁö ¾ÊÀ¸¸é TRUE¸¦ ¹İÈ¯ÇÕ´Ï´Ù.
 }
 
 void CTestCSCStaticEditDlg::OnSysCommand(UINT nID, LPARAM lParam)
@@ -189,19 +198,19 @@ void CTestCSCStaticEditDlg::OnSysCommand(UINT nID, LPARAM lParam)
 	}
 }
 
-// ëŒ€í™” ìƒìì— ìµœì†Œí™” ë‹¨ì¶”ë¥¼ ì¶”ê°€í•  ê²½ìš° ì•„ì´ì½˜ì„ ê·¸ë¦¬ë ¤ë©´
-//  ì•„ë˜ ì½”ë“œê°€ í•„ìš”í•©ë‹ˆë‹¤.  ë¬¸ì„œ/ë·° ëª¨ë¸ì„ ì‚¬ìš©í•˜ëŠ” MFC ì• í”Œë¦¬ì¼€ì´ì…˜ì˜ ê²½ìš°ì—ëŠ”
-//  í”„ë ˆì„ì›Œí¬ì—ì„œ ì´ ì‘ì—…ì„ ìë™ìœ¼ë¡œ ìˆ˜í–‰í•©ë‹ˆë‹¤.
+// ´ëÈ­ »óÀÚ¿¡ ÃÖ¼ÒÈ­ ´ÜÃß¸¦ Ãß°¡ÇÒ °æ¿ì ¾ÆÀÌÄÜÀ» ±×¸®·Á¸é
+//  ¾Æ·¡ ÄÚµå°¡ ÇÊ¿äÇÕ´Ï´Ù.  ¹®¼­/ºä ¸ğµ¨À» »ç¿ëÇÏ´Â MFC ¾ÖÇÃ¸®ÄÉÀÌ¼ÇÀÇ °æ¿ì¿¡´Â
+//  ÇÁ·¹ÀÓ¿öÅ©¿¡¼­ ÀÌ ÀÛ¾÷À» ÀÚµ¿À¸·Î ¼öÇàÇÕ´Ï´Ù.
 
 void CTestCSCStaticEditDlg::OnPaint()
 {
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // ê·¸ë¦¬ê¸°ë¥¼ ìœ„í•œ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ì…ë‹ˆë‹¤.
+		CPaintDC dc(this); // ±×¸®±â¸¦ À§ÇÑ µğ¹ÙÀÌ½º ÄÁÅØ½ºÆ®ÀÔ´Ï´Ù.
 
 		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
 
-		// í´ë¼ì´ì–¸íŠ¸ ì‚¬ê°í˜•ì—ì„œ ì•„ì´ì½˜ì„ ê°€ìš´ë°ì— ë§ì¶¥ë‹ˆë‹¤.
+		// Å¬¶óÀÌ¾ğÆ® »ç°¢Çü¿¡¼­ ¾ÆÀÌÄÜÀ» °¡¿îµ¥¿¡ ¸ÂÃä´Ï´Ù.
 		int cxIcon = GetSystemMetrics(SM_CXICON);
 		int cyIcon = GetSystemMetrics(SM_CYICON);
 		CRect rect;
@@ -209,7 +218,7 @@ void CTestCSCStaticEditDlg::OnPaint()
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// ì•„ì´ì½˜ì„ ê·¸ë¦½ë‹ˆë‹¤.
+		// ¾ÆÀÌÄÜÀ» ±×¸³´Ï´Ù.
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
@@ -218,8 +227,8 @@ void CTestCSCStaticEditDlg::OnPaint()
 	}
 }
 
-// ì‚¬ìš©ìê°€ ìµœì†Œí™”ëœ ì°½ì„ ë„ëŠ” ë™ì•ˆì— ì»¤ì„œê°€ í‘œì‹œë˜ë„ë¡ ì‹œìŠ¤í…œì—ì„œ
-//  ì´ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•©ë‹ˆë‹¤.
+// »ç¿ëÀÚ°¡ ÃÖ¼ÒÈ­µÈ Ã¢À» ²ô´Â µ¿¾È¿¡ Ä¿¼­°¡ Ç¥½ÃµÇµµ·Ï ½Ã½ºÅÛ¿¡¼­
+//  ÀÌ ÇÔ¼ö¸¦ È£ÃâÇÕ´Ï´Ù.
 HCURSOR CTestCSCStaticEditDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
@@ -228,17 +237,17 @@ HCURSOR CTestCSCStaticEditDlg::OnQueryDragIcon()
 
 void CTestCSCStaticEditDlg::OnBnClickedOk()
 {
-	// TODO: ì—¬ê¸°ì— ì»¨íŠ¸ë¡¤ ì•Œë¦¼ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
+	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
 	CDialogEx::OnOK();
 }
 
 void CTestCSCStaticEditDlg::OnBnClickedCancel()
 {
-	// TODO: ì—¬ê¸°ì— ì»¨íŠ¸ë¡¤ ì•Œë¦¼ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
+	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
 	CDialogEx::OnCancel();
 }
 
-// ëª¨ë“  CSCStaticEditì— ì»¬ëŸ¬ í…Œë§ˆë¥¼ ì¼ê´„ ì ìš©
+// ¸ğµç CSCStaticEdit¿¡ ÄÃ·¯ Å×¸¶¸¦ ÀÏ°ı Àû¿ë
 void CTestCSCStaticEditDlg::apply_color_theme_to_edits(int theme)
 {
 	m_edit_static.set_color_theme(theme, true);
@@ -249,7 +258,7 @@ void CTestCSCStaticEditDlg::apply_color_theme_to_edits(int theme)
 	m_edit_dynamic.set_color_theme(theme, true);
 }
 
-// ëª¨ë“  CSCStaticEditì— í°íŠ¸ë¥¼ ì¼ê´„ ì ìš©
+// ¸ğµç CSCStaticEdit¿¡ ÆùÆ®¸¦ ÀÏ°ı Àû¿ë
 void CTestCSCStaticEditDlg::apply_font_to_edits(const CString& font_name)
 {
 	m_edit_static.set_font_name(font_name);
@@ -273,7 +282,7 @@ void CTestCSCStaticEditDlg::OnWindowPosChanged(WINDOWPOS* lpwndpos)
 {
 	CDialogEx::OnWindowPosChanged(lpwndpos);
 
-	// TODO: ì—¬ê¸°ì— ë©”ì‹œì§€ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
+	// TODO: ¿©±â¿¡ ¸Ş½ÃÁö Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
 	SaveWindowPosition(&theApp, this);
 }
 

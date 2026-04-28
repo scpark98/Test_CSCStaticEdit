@@ -265,6 +265,8 @@
     <None Include="res\TestCSCStaticEdit.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\images\email.png" />
+    <Image Include="res\images\email_white.png" />
     <Image Include="res\Test_CSCStaticEdit.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
